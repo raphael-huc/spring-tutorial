@@ -7,11 +7,12 @@ import com.mycompany.dvdstore.service.MovieService;
 import java.util.Scanner;
 
 /**
- * Hello world!
+ * Exercice n°2 du cours
  *
  */
 public class App 
 {
+
     public static void main( String[] args )
     {
         MovieController movieController = new MovieController();
