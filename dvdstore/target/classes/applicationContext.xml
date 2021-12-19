@@ -7,9 +7,9 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config/>
+    <context:property-placeholder location="application.properties"/>
 
     <bean id="movieRepository" class="com.mycompany.dvdstore.repository.FileMovieRepository">
-        <property name="file" value="C:\\temp\\movies.csv"></property>
     </bean>
     <bean id="movieService" class="com.mycompany.dvdstore.service.DefaultMovieService">
     </bean>
