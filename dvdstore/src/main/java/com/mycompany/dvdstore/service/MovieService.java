@@ -9,6 +9,14 @@ public class MovieService implements MovieServiceInterface {
 
     private GoLiveMovieRepository goLiveMovieRepository = new GoLiveMovieRepository();
 
+    public GoLiveMovieRepository getGoLiveMovieRepository() {
+        return goLiveMovieRepository;
+    }
+
+    public void setGoLiveMovieRepository(GoLiveMovieRepository goLiveMovieRepository) {
+        this.goLiveMovieRepository = goLiveMovieRepository;
+    }
+
     public void registerMovie(Movie movie) {
         goLiveMovieRepository.add(movie);
     }
