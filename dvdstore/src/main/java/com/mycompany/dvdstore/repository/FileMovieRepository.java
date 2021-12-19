@@ -24,7 +24,7 @@ public class FileMovieRepository implements MovieRepositoryInterface{
             writer=new FileWriter(file,true);
             writer.write( movie.getTitle() + ";" + movie.getGenre() + "\n");
             writer.close();
-            System.out.println("Le film " + movie.getTitle() + " a été rajouté avec succès");
+            System.out.println("Le film " + movie.getTitle() + " a été rajouté avec succès au fichier csv.");
         }
         catch (IOException e){
             e.printStackTrace();
