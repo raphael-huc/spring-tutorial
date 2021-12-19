@@ -26,5 +26,6 @@ public class MovieController {
 
          Movie movie = new Movie(title, genre);
          movieService.registerMovie(movie);
+
      }
 }
