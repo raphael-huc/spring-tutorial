@@ -2,13 +2,14 @@ package com.mycompany.dvdstore;
 
 import com.mycompany.dvdstore.controller.MovieController;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Exercice n°2 du cours
- *
- */
+
+@Configuration
+@ComponentScan({"com.mycompany.dvdstore.controller","com.mycompany.dvdstore.service","com.mycompany.dvdstore.repository.file"})
+@PropertySource("classpath:application.properties")
+@ImportResource("classpath:applicationContext.xml")
 public class App 
 {
 
@@ -19,7 +20,7 @@ public class App
         //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // Injection avec une classe @Configuration sans utiliser un ficher xml
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(App.class);
         MovieController movieController = applicationContext.getBean(MovieController.class);
 
         movieController.addUsingConsole();
