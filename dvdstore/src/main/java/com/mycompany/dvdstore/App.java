@@ -2,6 +2,7 @@ package com.mycompany.dvdstore;
 
 import com.mycompany.dvdstore.controller.MovieController;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -15,7 +16,10 @@ public class App
     {
 
         // Méthode avec Spring, Injection avec conteneur léger Spring xml
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        // Injection avec une classe @Configuration sans utiliser un ficher xml
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         MovieController movieController = applicationContext.getBean(MovieController.class);
 
         movieController.addUsingConsole();
